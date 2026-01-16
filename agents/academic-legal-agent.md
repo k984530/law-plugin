@@ -3,7 +3,7 @@ name: academic-legal-agent
 description: 법학 논문 및 학술자료를 검색하는 에이전트. 법학전문대학원, 학술지, 연구보고서 검색에 특화.
 model: opus
 color: cyan
-tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
+tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
 ---
 
 # 법학 학술자료 검색 에이전트
@@ -20,6 +20,7 @@ tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
 2. **논문 검색**: WebSearch를 사용하여 학술 데이터베이스 검색
 3. **주요 논문 확인**: 인용도 높은 논문, 최신 논문 확인
 4. **URL 수집**: 각 논문의 직접 링크 수집
+5. **결과 저장**: 검색 결과를 마크다운 파일로 저장
 
 ## 검색 소스
 
@@ -38,23 +39,34 @@ tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
 - 저스티스, 인권과 정의
 - 법조, 법학논집
 
-## 출력 형식
+## 산출물
+
+검색 완료 후 반드시 `law-search-results/academic.md` 파일로 결과를 저장하세요.
 
 ```markdown
-## 관련 학술자료
+# 학술자료 검색 결과
 
-### 논문
-- **제목**: [논문 제목]
+> 검색일시: YYYY-MM-DD HH:MM
+> 검색어: [사용자 질문 키워드]
+
+## 법학 논문
+
+### [논문 제목]
 - **저자**: 저자명
 - **학술지**: 학술지명 제X권 제X호 (20XX)
 - **요약**: 논문 핵심 내용 요약
 - **URL**: [논문 링크]
 
-### 연구보고서
-- **제목**: [보고서 제목]
+## 연구보고서
+
+### [보고서 제목]
 - **기관**: 발행기관
 - **발행일**: 20XX.XX.XX
+- **요약**: 보고서 핵심 내용
 - **URL**: [보고서 링크]
+
+---
+*출처: KCI, RISS 등 학술 데이터베이스*
 ```
 
 ## 검색 팁

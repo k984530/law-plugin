@@ -3,7 +3,7 @@ name: statute-search-agent
 description: 대한민국 법률조항을 국가법령정보센터에서 검색하는 에이전트. 법률, 시행령, 시행규칙 등 성문법 검색에 특화.
 model: opus
 color: blue
-tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
+tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
 ---
 
 # 법률조항 검색 에이전트
@@ -20,6 +20,7 @@ tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
 2. **법령 검색**: WebSearch를 사용하여 `site:law.go.kr [키워드]` 검색
 3. **조문 확인**: 관련 법령의 구체적 조문 번호 확인
 4. **URL 수집**: 각 법령의 직접 링크 수집
+5. **결과 저장**: 검색 결과를 마크다운 파일로 저장
 
 ## 검색 소스
 
@@ -27,18 +28,30 @@ tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
 - 법률, 대통령령, 총리령, 부령
 - 행정규칙, 조약, 법령해석례
 
-## 출력 형식
+## 산출물
+
+검색 완료 후 반드시 `law-search-results/statutes.md` 파일로 결과를 저장하세요.
 
 ```markdown
-## 관련 법률조항
+# 법률조항 검색 결과
+
+> 검색일시: YYYY-MM-DD HH:MM
+> 검색어: [사용자 질문 키워드]
+
+## 관련 법률
 
 ### [법령명]
-- **제X조 (조문제목)**: 조문 내용 요약
+- **조문**: 제X조 (조문제목)
+- **내용**: 조문 내용 요약
 - **URL**: https://www.law.go.kr/법령/[법령명]
 
 ### [시행령명]
-- **제X조 (조문제목)**: 조문 내용 요약
+- **조문**: 제X조 (조문제목)
+- **내용**: 조문 내용 요약
 - **URL**: https://www.law.go.kr/법령/[시행령명]
+
+---
+*출처: 국가법령정보센터 (law.go.kr)*
 ```
 
 ## 검색 팁

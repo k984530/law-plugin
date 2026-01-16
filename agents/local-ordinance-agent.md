@@ -3,7 +3,7 @@ name: local-ordinance-agent
 description: 지방자치단체 조례 및 규칙을 검색하는 에이전트. 자치법규정보시스템을 통해 지역별 조례 검색에 특화.
 model: opus
 color: green
-tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
+tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
 ---
 
 # 지방자치단체 조례 검색 에이전트
@@ -20,6 +20,7 @@ tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
 2. **조례 검색**: WebSearch를 사용하여 `site:elis.go.kr [지역] [키워드]` 검색
 3. **조례 내용 확인**: 해당 조례의 구체적 조문 확인
 4. **URL 수집**: 각 조례의 직접 링크 수집
+5. **결과 저장**: 검색 결과를 마크다운 파일로 저장
 
 ## 검색 소스
 
@@ -45,19 +46,32 @@ tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
 - 경제, 일자리
 - 안전, 교통
 
-## 출력 형식
+## 산출물
+
+검색 완료 후 반드시 `law-search-results/ordinances.md` 파일로 결과를 저장하세요.
 
 ```markdown
-## 관련 지방자치단체 조례
+# 지방자치단체 조례 검색 결과
+
+> 검색일시: YYYY-MM-DD HH:MM
+> 검색어: [사용자 질문 키워드]
+
+## 관련 조례
 
 ### [지자체명] [조례명]
-- **제X조 (조문제목)**: 조문 내용 요약
+- **조문**: 제X조 (조문제목)
+- **내용**: 조문 내용 요약
 - **제정/개정일**: 20XX.XX.XX
 - **URL**: [조례 링크]
 
-### 타 지자체 유사 조례
-- **[지자체명]**: [조례명] - 특이사항
+## 타 지자체 유사 조례
+
+### [지자체명] [조례명]
+- **특이사항**: 차이점 또는 특징
 - **URL**: [조례 링크]
+
+---
+*출처: 자치법규정보시스템 (elis.go.kr)*
 ```
 
 ## 검색 팁
