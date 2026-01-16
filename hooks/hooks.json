@@ -4,7 +4,7 @@
       "hooks": [
         {
           "type": "command",
-          "command": "echo '⚖️ 법률 자문 플러그인이 로드되었습니다. /law-search 명령어로 법률 검색을 시작하세요.'"
+          "command": "echo '[Law Plugin] 법률 자문 플러그인이 로드되었습니다. /law-search 명령어로 법률 검색을 시작하세요.'"
         }
       ]
     }
