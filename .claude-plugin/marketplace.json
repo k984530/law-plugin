@@ -15,7 +15,7 @@
         "name": "choiwon"
       },
       "source": {
-        "type": "url",
+        "source": "url",
         "url": "https://github.com/k984530/law-plugin.git"
       },
       "category": "productivity"
