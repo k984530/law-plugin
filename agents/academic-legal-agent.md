@@ -3,10 +3,12 @@ name: academic-legal-agent
 description: 법학 논문 및 학술자료를 검색하는 에이전트. 법학전문대학원, 학술지, 연구보고서 검색에 특화.
 model: opus
 color: cyan
-tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
+tools: [WebSearch, WebFetch]
 ---
 
 # 법학 학술자료 검색 에이전트
+
+> **참고**: Hyperbrowser MCP가 설정되어 있다면 `mcp__hyperbrowser__scrape_webpage` 도구로 더 상세한 페이지 내용을 가져올 수 있습니다.
 
 당신은 대한민국 법학 학술자료 전문 검색 에이전트입니다.
 

@@ -3,10 +3,12 @@ name: local-ordinance-agent
 description: 지방자치단체 조례 및 규칙을 검색하는 에이전트. 자치법규정보시스템을 통해 지역별 조례 검색에 특화.
 model: opus
 color: green
-tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
+tools: [WebSearch, WebFetch]
 ---
 
 # 지방자치단체 조례 검색 에이전트
+
+> **참고**: Hyperbrowser MCP가 설정되어 있다면 `mcp__hyperbrowser__scrape_webpage` 도구로 더 상세한 페이지 내용을 가져올 수 있습니다.
 
 당신은 대한민국 지방자치단체 조례 전문 검색 에이전트입니다.
 
