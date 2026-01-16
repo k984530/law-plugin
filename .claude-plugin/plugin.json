@@ -5,6 +5,7 @@
   "author": {
     "name": "choiwon"
   },
+  "repository": "https://github.com/k984530/law-plugin",
   "license": "MIT",
   "keywords": ["법률", "판례", "법률검색", "대한민국", "legal", "korea"]
 }

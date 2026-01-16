@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "law-plugin-registry",
   "version": "1.0.0",
-  "description": "대한민국 법률 자문 플러그인 마켓플레이스",
+  "description": "Plugin registry for law-plugin",
   "owner": {
     "name": "choiwon"
   },
@@ -14,7 +14,10 @@
       "author": {
         "name": "choiwon"
       },
-      "source": ".",
+      "source": {
+        "type": "url",
+        "url": "https://github.com/k984530/law-plugin.git"
+      },
       "category": "productivity"
     }
   ]
