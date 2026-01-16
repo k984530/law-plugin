@@ -25,6 +25,32 @@
 
 - **Korean Legal Search** - 대한민국 법률 검색 가이드 및 URL 형식 안내
 
+## 필수 요구사항
+
+### Hyperbrowser MCP 설정
+
+이 플러그인은 법률 사이트의 동적 콘텐츠를 가져오기 위해 **Hyperbrowser MCP**가 필요합니다.
+
+1. [Hyperbrowser](https://hyperbrowser.ai)에서 API 키 발급
+
+2. `~/.claude/mcp.json`에 설정 추가:
+
+```json
+{
+  "mcpServers": {
+    "hyperbrowser": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/hyperbrowser-mcp"],
+      "env": {
+        "HYPERBROWSER_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+3. Claude Code 재시작
+
 ## 설치
 
 ```bash
