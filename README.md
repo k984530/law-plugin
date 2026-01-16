@@ -19,17 +19,20 @@
 
 ### 📄 산출물
 
-각 에이전트는 검색 결과를 `law-search-results/` 디렉토리에 마크다운 파일로 저장합니다:
+6개 에이전트의 검색 결과를 종합하여 **하나의 보고서**로 생성합니다:
 
 ```
 law-search-results/
-├── statutes.md        # 법률조항 검색 결과
-├── case-law.md        # 판례 검색 결과
-├── constitutional.md  # 헌법재판소 결정
-├── interpretation.md  # 법령해석 결과
-├── academic.md        # 학술자료 검색 결과
-└── ordinances.md      # 조례 검색 결과
+└── legal-report.md    # 종합 법률 검색 보고서
 ```
+
+보고서에는 다음 내용이 포함됩니다:
+1. 관련 법률조항
+2. 관련 판례
+3. 헌법재판소 결정
+4. 법령해석
+5. 학술자료
+6. 지방자치단체 조례
 
 ### 📋 명령어
 

@@ -3,7 +3,7 @@ name: legal-interpretation-agent
 description: 법제처 법령해석과 행정해석을 검색하는 에이전트. 법령해석례, 행정심판례, 유권해석 검색에 특화.
 model: opus
 color: orange
-tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
+tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
 ---
 
 # 법령해석 검색 에이전트
@@ -39,33 +39,23 @@ tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
 - **행정심판 재결**: 행정심판위원회 판단
 - **예규/고시**: 행정기관 내부 기준
 
-## 산출물
+## 결과 반환 형식
 
-검색 완료 후 반드시 `law-search-results/interpretation.md` 파일로 결과를 저장하세요.
+검색 완료 후 아래 형식으로 결과를 **텍스트로 반환**하세요 (파일 저장 안함):
 
-```markdown
-# 법령해석 검색 결과
+```
+## 법령해석
 
-> 검색일시: YYYY-MM-DD HH:MM
-> 검색어: [사용자 질문 키워드]
-
-## 법제처 법령해석
-
-### 법령해석 (회신일자: 20XX.XX.XX)
+### 법제처 법령해석 (회신일자: 20XX.XX.XX)
 - **질의요지**: 질의 내용 요약
 - **회답**: 법제처 해석 내용
 - **이유**: 해석 근거
 - **URL**: [해석례 링크]
 
-## 행정해석
-
 ### [소관부처] 행정해석
 - **질의요지**: 질의 내용
 - **회신내용**: 부처 해석 내용
 - **URL**: [해석례 링크]
-
----
-*출처: 법제처 (moleg.go.kr)*
 ```
 
 ## 검색 팁

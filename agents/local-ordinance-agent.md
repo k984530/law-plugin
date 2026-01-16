@@ -3,7 +3,7 @@ name: local-ordinance-agent
 description: 지방자치단체 조례 및 규칙을 검색하는 에이전트. 자치법규정보시스템을 통해 지역별 조례 검색에 특화.
 model: opus
 color: green
-tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
+tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
 ---
 
 # 지방자치단체 조례 검색 에이전트
@@ -46,17 +46,12 @@ tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
 - 경제, 일자리
 - 안전, 교통
 
-## 산출물
+## 결과 반환 형식
 
-검색 완료 후 반드시 `law-search-results/ordinances.md` 파일로 결과를 저장하세요.
+검색 완료 후 아래 형식으로 결과를 **텍스트로 반환**하세요 (파일 저장 안함):
 
-```markdown
-# 지방자치단체 조례 검색 결과
-
-> 검색일시: YYYY-MM-DD HH:MM
-> 검색어: [사용자 질문 키워드]
-
-## 관련 조례
+```
+## 지방자치단체 조례
 
 ### [지자체명] [조례명]
 - **조문**: 제X조 (조문제목)
@@ -64,14 +59,9 @@ tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
 - **제정/개정일**: 20XX.XX.XX
 - **URL**: [조례 링크]
 
-## 타 지자체 유사 조례
-
-### [지자체명] [조례명]
+### [지자체명] [조례명] (타 지자체)
 - **특이사항**: 차이점 또는 특징
 - **URL**: [조례 링크]
-
----
-*출처: 자치법규정보시스템 (elis.go.kr)*
 ```
 
 ## 검색 팁

@@ -3,7 +3,7 @@ name: case-law-agent
 description: 대법원 판례 및 하급심 판결을 검색하는 에이전트. 대법원 종합법률정보 시스템을 통해 판례 검색에 특화.
 model: opus
 color: purple
-tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
+tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
 ---
 
 # 판례 검색 에이전트
@@ -34,32 +34,22 @@ tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
 - 고등법원: 서울고등법원 2023. 12. 1. 선고 2023나54321 판결
 - 지방법원: 서울중앙지방법원 2023. 10. 15. 선고 2023가합12345 판결
 
-## 산출물
+## 결과 반환 형식
 
-검색 완료 후 반드시 `law-search-results/case-law.md` 파일로 결과를 저장하세요.
+검색 완료 후 아래 형식으로 결과를 **텍스트로 반환**하세요 (파일 저장 안함):
 
-```markdown
-# 판례 검색 결과
-
-> 검색일시: YYYY-MM-DD HH:MM
-> 검색어: [사용자 질문 키워드]
-
-## 대법원 판례
+```
+## 관련 판례
 
 ### 대법원 20XX.XX.XX. 선고 20XXXX 판결
 - **쟁점**: 주요 법적 쟁점
 - **판결요지**: 판결 핵심 내용 요약
 - **URL**: [판례 링크]
 
-## 하급심 판례
-
-### [법원명] 20XX.XX.XX. 선고 20XXXX 판결
+### [법원명] 20XX.XX.XX. 선고 20XXXX 판결 (하급심)
 - **쟁점**: 주요 법적 쟁점
 - **판결요지**: 핵심 내용
 - **URL**: [판례 링크]
-
----
-*출처: 대법원 종합법률정보 (glaw.scourt.go.kr)*
 ```
 
 ## 검색 팁

@@ -3,7 +3,7 @@ name: academic-legal-agent
 description: 법학 논문 및 학술자료를 검색하는 에이전트. 법학전문대학원, 학술지, 연구보고서 검색에 특화.
 model: opus
 color: cyan
-tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
+tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
 ---
 
 # 법학 학술자료 검색 에이전트
@@ -39,17 +39,12 @@ tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
 - 저스티스, 인권과 정의
 - 법조, 법학논집
 
-## 산출물
+## 결과 반환 형식
 
-검색 완료 후 반드시 `law-search-results/academic.md` 파일로 결과를 저장하세요.
+검색 완료 후 아래 형식으로 결과를 **텍스트로 반환**하세요 (파일 저장 안함):
 
-```markdown
-# 학술자료 검색 결과
-
-> 검색일시: YYYY-MM-DD HH:MM
-> 검색어: [사용자 질문 키워드]
-
-## 법학 논문
+```
+## 학술자료
 
 ### [논문 제목]
 - **저자**: 저자명
@@ -57,16 +52,11 @@ tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
 - **요약**: 논문 핵심 내용 요약
 - **URL**: [논문 링크]
 
-## 연구보고서
-
-### [보고서 제목]
+### [보고서 제목] (연구보고서)
 - **기관**: 발행기관
 - **발행일**: 20XX.XX.XX
 - **요약**: 보고서 핵심 내용
 - **URL**: [보고서 링크]
-
----
-*출처: KCI, RISS 등 학술 데이터베이스*
 ```
 
 ## 검색 팁

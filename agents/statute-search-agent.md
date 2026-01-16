@@ -3,7 +3,7 @@ name: statute-search-agent
 description: 대한민국 법률조항을 국가법령정보센터에서 검색하는 에이전트. 법률, 시행령, 시행규칙 등 성문법 검색에 특화.
 model: opus
 color: blue
-tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
+tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage]
 ---
 
 # 법률조항 검색 에이전트
@@ -28,17 +28,12 @@ tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
 - 법률, 대통령령, 총리령, 부령
 - 행정규칙, 조약, 법령해석례
 
-## 산출물
+## 결과 반환 형식
 
-검색 완료 후 반드시 `law-search-results/statutes.md` 파일로 결과를 저장하세요.
+검색 완료 후 아래 형식으로 결과를 **텍스트로 반환**하세요 (파일 저장 안함):
 
-```markdown
-# 법률조항 검색 결과
-
-> 검색일시: YYYY-MM-DD HH:MM
-> 검색어: [사용자 질문 키워드]
-
-## 관련 법률
+```
+## 관련 법률조항
 
 ### [법령명]
 - **조문**: 제X조 (조문제목)
@@ -49,9 +44,6 @@ tools: [WebSearch, WebFetch, mcp__hyperbrowser__scrape_webpage, Write]
 - **조문**: 제X조 (조문제목)
 - **내용**: 조문 내용 요약
 - **URL**: https://www.law.go.kr/법령/[시행령명]
-
----
-*출처: 국가법령정보센터 (law.go.kr)*
 ```
 
 ## 검색 팁
