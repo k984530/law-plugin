@@ -1,0 +1,21 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "law-plugin-registry",
+  "version": "1.0.0",
+  "description": "대한민국 법률 자문 플러그인 마켓플레이스",
+  "owner": {
+    "name": "choiwon"
+  },
+  "plugins": [
+    {
+      "name": "law-plugin",
+      "description": "대한민국 법률조항과 판례를 다방면에서 검색하여 URL로 제공하는 법률 자문 플러그인",
+      "version": "0.1.0",
+      "author": {
+        "name": "choiwon"
+      },
+      "source": ".",
+      "category": "productivity"
+    }
+  ]
+}
